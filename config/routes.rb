@@ -1,20 +1,18 @@
 Rails.application.routes.draw do
-
-
-  get 'pages/home'
-  root to: "pages#home"
-
  
-  resources :planes
+# root to home page
+get 'pages/home'
+root to: 'pages#home'
+
+# roots to login details
+get '/login' => 'sessions#new'
+post '/login' => 'sessions#create'
+delete '/login' => 'sessions#destroy'   
 
 
-  get 'flights/new'
-  get 'flights/create'
-  get 'flights/index'
-  get 'flights/show'
-  get 'flights/edit'
-  get 'flights/update'
-  get 'flights/destroy'
-
+# User resources 
+resources :users
+resources :planes
+resources :flights
 
 end
