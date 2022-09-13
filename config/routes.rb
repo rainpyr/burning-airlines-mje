@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
 # root to home page
+get 'pages/home'
 root to: 'pages#home'
 
 # roots to login details
@@ -11,7 +12,7 @@ delete '/login' => 'sessions#destroy'
 
 # User resources 
 resources :users
-
-
+resources :planes
+resources :flights
 
 end

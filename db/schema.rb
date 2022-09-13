@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_13_102913) do
+ActiveRecord::Schema.define(version: 2022_09_13_095639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 2022_09_13_102913) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "password_digest"
+  create_table "flights", force: :cascade do |t|
+    t.integer "flight"
+    t.date "departure_date"
+    t.text "origin"
+    t.text "destination"
+    t.integer "plane_id"
+    t.integer "seats"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "planes", force: :cascade do |t|
+    t.string "name"
+    t.integer "rows"
+    t.integer "cols"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
