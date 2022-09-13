@@ -1,3 +1,17 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ 
+# root to home page
+root to: 'pages#home'
+
+# roots to login details
+get '/login' => 'sessions#new'
+post '/login' => 'sessions#create'
+delete '/login' => 'sessions#destroy'   
+
+
+# User resources 
+resources :users
+
+
+
 end
