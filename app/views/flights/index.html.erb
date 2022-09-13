@@ -1,2 +1,17 @@
-<h1>Flights#index</h1>
-<p>Find me in app/views/flights/index.html.erb</p>
+<h2>All Flights</h2>
+
+<%= link_to 'Add Flight', new_flight_path %>
+
+<p>
+Total: <%= pluralize(@flights.length, 'flight') %>
+</p>
+
+    <ul>
+    <% @flights.each do |flight| %>
+        <li>
+            <%= link_to flight.flight, flight_path(flight) %>
+            
+        </li>
+        <% end %>
+    
+    </ul>
