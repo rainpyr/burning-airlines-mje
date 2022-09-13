@@ -1,0 +1,10 @@
+<h2>All airplanes</h2>
+
+
+<% @planes.each do |plane| %>
+    <% plane_row = plane.rows  %>
+    <% plane_cols = plane.cols  %>
+    <p><%= plane_row %></p>
+    <p><%= plane_cols %></p>
+
+<% end %>

@@ -1,0 +1,23 @@
+<%# The below is the form to sign up form for users %>
+<%= form_with model: @user, local: true, html: {multipart: true} do |f|%>
+<br>
+<%= f.label :name, 'Name' %>
+<br>
+<%= f.text_field :name %>
+<br>
+<%= f.label :email, 'Email' %>
+<br>
+<%= f.text_field :email %>
+<br>
+<%= f.label :password, 'Password' %>
+<br>
+<%= f.password_field :password %>
+<br>
+<%= f.label :password_confirmation, 'Confirm Password' %>
+<br>
+<%= f.password_field :password_confirmation %>
+<br>
+<%= f.submit %>
+<br>
+<% end %>
+<br>
