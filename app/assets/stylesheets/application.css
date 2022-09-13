@@ -18,3 +18,47 @@
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
  }
+
+ .row_seats {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(212, 212, 212);
+    border-radius: 10px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.col_seats {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(47, 0, 255);
+    visibility: hidden;
+
+ }
+
+ .column {
+    border: 2px solid green;
+
+ }
+ .row {
+    border: 2px solid green;
+    display: block;
+ }
+
+ .test{
+    /* border: 1px solid red; */
+    display: inline-block;
+ }
+
+ .colText{
+    display: inline;
+ }
+
+ .plane_seats_grid {
+    border: 1px solid rgb(100, 100, 100);
+    width: 800px;
+    margin: 0 auto;
+    padding: 60px 0;
+    border-radius: 20%;
+ }

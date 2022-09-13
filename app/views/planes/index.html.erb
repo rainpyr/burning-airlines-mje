@@ -1,10 +1,26 @@
-<h2>All airplanes</h2>
+<h2>ALL AIRPLANES</h2>
 
 
 <% @planes.each do |plane| %>
-    <% plane_row = plane.rows  %>
-    <% plane_cols = plane.cols  %>
-    <p><%= plane_row %></p>
-    <p><%= plane_cols %></p>
 
-<% end %>
+    <h2>Plane Name: <%= plane.name %></h2>
+    
+    <% alphabetArr = ('A'..'Z') %>
+    <% rowArr = alphabetArr.take(plane.rows)  %>
+    <% colArr = (1..plane.cols).to_a %>
+    
+    <div class="plane_seats_grid">
+        <% rowArr.each do |row| %>
+                <div></div> <!-- dummy div -->
+                <div class="test">
+            <% colArr.each do |col| %>
+                
+                <div class="row_seats" id="<%= row %><%= col %>"><%= row %><%= col %></div>
+            <% end %> <!-- colArr.each -->
+                </div> <!-- test div -->
+        <% end %> <!-- rowArr.each -->
+    </div> <!-- plane_seats_grid -->
+
+<% end %> <!-- @planes.each -->
+
+<br><br><br>
