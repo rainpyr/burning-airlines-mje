@@ -1,2 +1,19 @@
-<h1>Planes#new</h1>
-<p>Find me in app/views/planes/new.html.erb</p>
+<h2>CREATE NEW PLANES HERE</h2>
+
+<%= form_with model: @plane, local: true do |f| %>
+
+    <div class="new_form">
+
+        <h2><%= f.label :name %><h2>
+        <p><%= f.text_field :name %></p>
+
+        <h2><%= f.label :rows %><h2>
+        <p><%= f.number_field :rows %></p>
+
+        <h2><%= f.label :cols %><h2>
+        <p><%= f.number_field :cols %></p>
+
+        <%= f.submit %>
+    </div>
+
+<% end %>

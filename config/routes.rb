@@ -16,4 +16,6 @@ resources :users
 resources :planes
 resources :flights
 
+get '/plane/json' => 'planes#json'
+
 end
