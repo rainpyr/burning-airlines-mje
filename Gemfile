@@ -55,3 +55,7 @@ end
 
 
 gem 'pry-rails'
+
+# This gem handles both addings CORS headers AND handling Options pre-flight checks from axios.post()
+gem 'rack-cors'
+

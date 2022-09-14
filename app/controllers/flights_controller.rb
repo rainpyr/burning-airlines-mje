@@ -1,4 +1,7 @@
 class FlightsController < ApplicationController
+  # React frontend, so we wont have this token
+  skip_before_action :verify_authenticity_token, raise:false
+
   before_action :check_if_logged_in, except: [ :index, :show ]
   
   def new
