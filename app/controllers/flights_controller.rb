@@ -37,6 +37,12 @@ class FlightsController < ApplicationController
     @flights = Flight.all
   end
 
+  def index_flight_destionation
+    @index_flight_destionation = Flight.where destination: params[:destination]
+
+    render json: @index_flight_destionation
+  end
+
   def show
     @flight = Flight.find params[:id]
    

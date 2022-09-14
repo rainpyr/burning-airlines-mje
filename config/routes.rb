@@ -23,4 +23,6 @@ resources :flights
 
 get '/plane/json' => 'planes#json'
 
+get '/flights/:destination/json' => 'flights#index_flight_destionation'
+
 end
