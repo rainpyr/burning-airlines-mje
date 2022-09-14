@@ -10,9 +10,6 @@ class UsersController < ApplicationController
   # Form for the new USER
   @user = User.new
 
-  headers['Access-Control-Allow-Origin'] = '*'
-  render json: User.all
-
 end
 
 def create
@@ -52,12 +49,12 @@ end
 
 def index
 
-  # Shows all users register
-  @user = User.all
-
+  headers['Access-Control-Allow-Origin'] = '*'
   # Send to Ajax JS code, as JSON
   render json: User.all
-  
+
+  # Shows all users register
+  @user = User.all
 end
 
 def show

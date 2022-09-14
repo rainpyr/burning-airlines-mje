@@ -5,6 +5,8 @@ class FlightsController < ApplicationController
   before_action :check_if_logged_in, except: [ :index, :show ]
   
   def json
+   headers['Access-Control-Allow-Origin'] = '*'
+
     render json: Flight.all
 
   end

@@ -20,6 +20,7 @@ class PlanesController < ApplicationController
   end
 
   def json
+    headers['Access-Control-Allow-Origin'] = '*'
     render json: Plane.all
   end
 
