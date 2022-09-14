@@ -2,7 +2,7 @@ class FlightsController < ApplicationController
   # React frontend, so we wont have this token
   skip_before_action :verify_authenticity_token, raise:false
 
-  before_action :check_if_logged_in, except: [ :index, :show ]
+  # before_action :check_if_logged_in, except: [ :index, :show ]
   
   def json
    headers['Access-Control-Allow-Origin'] = '*'
@@ -35,6 +35,20 @@ class FlightsController < ApplicationController
 
   def index
     @flights = Flight.all
+  end
+
+  def index_flight_destination
+
+    @index_flight_destination = Flight.where destination: params[:destination]
+
+    render json: @index_flight_destination
+  end
+
+  def index_flight_search
+
+    @index_flight_destination = Flight.where origin: params[:origin], destination: params[:destination]
+
+    render json: @index_flight_destination
   end
 
   def show
