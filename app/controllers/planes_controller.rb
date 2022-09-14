@@ -1,5 +1,6 @@
 class PlanesController < ApplicationController
   before_action :check_if_logged_in
+  skip_before_action :verify_authenticity_token, raise: false
 
   def new
     @plane = Plane.new
@@ -21,6 +22,9 @@ class PlanesController < ApplicationController
   end
 
   def show
+    @plane = Plane.find params[:id]
+
+    render json: @plane
   end
 
   def edit

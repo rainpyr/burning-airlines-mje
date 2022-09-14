@@ -55,3 +55,4 @@ end
 
 
 gem 'pry-rails'
+gem 'rack-cors'
