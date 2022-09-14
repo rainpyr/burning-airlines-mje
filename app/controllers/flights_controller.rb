@@ -1,6 +1,14 @@
 class FlightsController < ApplicationController
   before_action :check_if_logged_in, except: [ :index, :show ]
   
+  def json
+    render json: Flight.all
+
+  end
+
+
+
+
   def new
 
     @flight = Flight.new 
@@ -25,7 +33,7 @@ class FlightsController < ApplicationController
   end
 
   def show
-    # @flight = Flight.find params[:id]
+    @flight = Flight.find params[:id]
    
     # @booking = Booking.new
   end
@@ -73,6 +81,9 @@ class FlightsController < ApplicationController
     @flight.destroy
     redirect_to flights_path
   end
+
+  
+
 
   private
   def flight_params

@@ -9,6 +9,7 @@ get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
 delete '/login' => 'sessions#destroy'   
 
+get '/flights/json' => 'flights#json' # get json for flights
 
 # User resources 
 resources :users
