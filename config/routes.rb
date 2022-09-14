@@ -7,7 +7,12 @@ root to: 'pages#home'
 # roots to login details
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
-delete '/login' => 'sessions#destroy'   
+delete '/login' => 'sessions#destroy'  
+
+# API / roots for reservations
+get '/reservations' => 'reservations#index'
+
+post '/reservations' => 'reservations#create'
 
 get '/flights/json' => 'flights#json' # get json for flights
 

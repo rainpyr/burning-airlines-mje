@@ -1,12 +1,29 @@
 class UsersController < ApplicationController
+
+  # React frontend, so we wont have this token
+  skip_before_action :verify_authenticity_token, raise:false
+
  #1. Create
  def new
 
+
   # Form for the new USER
   @user = User.new
+
 end
 
 def create
+
+        headers['Access-Control-Allow-Origin'] = '*'
+        user = User.create 
+
+        if user.present?
+            #send the created reservation object to JSON
+            render json: user
+        else
+            #error message
+            render json: {error: 'Could not create reservation'}, status: 422
+        end #if statement  
  
   # Create a new user 
   @user = User.create user_params
@@ -32,9 +49,12 @@ end
 
 def index
 
+  headers['Access-Control-Allow-Origin'] = '*'
+  # Send to Ajax JS code, as JSON
+  render json: User.all
+
   # Shows all users register
   @user = User.all
-  
 end
 
 def show
