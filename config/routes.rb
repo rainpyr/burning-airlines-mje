@@ -15,4 +15,6 @@ resources :users
 resources :planes
 resources :flights
 
+get '/planes/json' 
+
 end
