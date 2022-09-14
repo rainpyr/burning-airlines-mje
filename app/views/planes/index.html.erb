@@ -6,7 +6,8 @@
     <h2>Plane Name: <%= plane.name %></h2>
     
     <% alphabetArr = ('A'..'Z') %>
-    <% rowArr = alphabetArr.take(plane.rows)  %>
+    <% rowArr = alphabetArr.take(plane.rows) %>
+    
     <% colArr = (1..plane.cols).to_a %>
     
     <div class="plane_seats_grid">

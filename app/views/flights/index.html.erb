@@ -6,12 +6,25 @@
 Total: <%= pluralize(@flights.length, 'flight') %>
 </p>
 
-    <ul>
+    <table>
+    <tr>
+        <th>Flight</th>
+        <th>Date</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Plane</th>
+        <th>Remaining Seats</th>
+    </tr>
     <% @flights.each do |flight| %>
-        <li>
-            <%= link_to flight.flight, flight_path(flight) %>
-            
-        </li>
-        <% end %>
+    <tr>
+            <td><%= link_to flight.flight, flight_path(flight) %> </td>
+            <td><%= link_to flight.departure_date, flight_path(flight)%></td>
+            <td><%= link_to flight.origin, flight_path(flight) %></td>
+            <td><%= link_to flight.destination, flight_path(flight) %></td>
+            <td><%= link_to flight.plane_id, flight_path(flight) %></td>
+            <td><%= link_to flight.seats, flight_path(flight) %></td>
+        
+    </tr>
+    <% end %>
     
-    </ul>
+    </table>

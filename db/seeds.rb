@@ -155,3 +155,25 @@ puts "Reservation '#{r1.id} belongs to #{u1.name}"
 
 puts "Flight #{f1.id} has Reservations #{u1.reservations.pluck(:id).join(',')}"
 puts "Reservation '#{r1.id} belongs to #{f1.id}"
+
+
+# MAIN FOCUS is to try to perform a reservation on the REACT frontend framework.
+# familiarize ourself with group work and using react.
+# OMG REACT
+
+# RAILS PART
+# JUSTIN
+#  - Make a json page for planes
+#  - Put in associations
+
+# EVA 
+# - Make json page flights & a simple show page
+
+# MO
+# - Make json page for reservations 
+
+# ONCE RAILS IS DONE, JUMP INTO REACT
+
+# REACT PART
+# MO 
+# - Do the search part

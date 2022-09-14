@@ -14,10 +14,13 @@ get '/reservations' => 'reservations#index'
 
 post '/reservations' => 'reservations#create'
 
+get '/flights/json' => 'flights#json' # get json for flights
 
 # User resources 
 resources :users
 resources :planes
 resources :flights
+
+get '/plane/json' => 'planes#json'
 
 end

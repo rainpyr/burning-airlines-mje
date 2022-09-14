@@ -2,20 +2,25 @@ class PlanesController < ApplicationController
 
   # React frontend, so we wont have this token
   skip_before_action :verify_authenticity_token, raise:false
+  before_action :check_if_logged_in
 
   def new
+    @plane = Plane.new
   end
 
   def create
+    Plane.create plane_params
+
+    redirect_to planes_path
   end
 
   def index
     @planes = Plane.all
-    @planes.each do |plane|
-      @rowArr = (1..plane.rows).to_a
-      @colArr = (1..plane.cols).to_a
-    end
-    @nums = (1..20).to_a
+    
+  end
+
+  def json
+    render json: Plane.all
   end
 
   def show
@@ -29,4 +34,11 @@ class PlanesController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def plane_params
+    params.require(:plane).permit(:name, :rows, :cols)
+  end
+
 end
