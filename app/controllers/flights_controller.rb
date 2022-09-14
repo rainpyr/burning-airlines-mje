@@ -38,6 +38,7 @@ class FlightsController < ApplicationController
   end
 
   def index_flight_destination
+    headers['Access-Control-Allow-Origin'] = '*'
 
     @index_flight_destination = Flight.where destination: params[:destination]
 
@@ -45,6 +46,7 @@ class FlightsController < ApplicationController
   end
 
   def index_flight_search
+    headers['Access-Control-Allow-Origin'] = '*'
 
     @index_flight_destination = Flight.where origin: params[:origin], destination: params[:destination]
 
