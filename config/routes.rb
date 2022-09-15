@@ -21,6 +21,8 @@ resources :users
 resources :planes
 resources :flights
 
+get '/users/:name/json' => 'users#index'
+
 get '/plane/json' => 'planes#json'
 
 get '/flights/:destination/json' => 'flights#index_flight_destination'
