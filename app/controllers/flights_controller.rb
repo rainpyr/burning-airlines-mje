@@ -50,13 +50,13 @@ class FlightsController < ApplicationController
 
     @index_flight_destination = Flight.where origin: params[:origin], destination: params[:destination]
 
-    render json: @index_flight_destination, include: [:plane]
+    render json: @index_flight_destination, include: [:plane, :reservations]
   end
 
   def show
     @flight = Flight.find params[:id]
    
-    render json: @flight, include: [:plane]
+    render json: @flight, include: [:plane, :reservations]
     # @booking = Booking.new
   end
 
