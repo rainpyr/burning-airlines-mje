@@ -1,0 +1,35 @@
+<%= form_with model: @flight, local: true, html: { mulipart: true } do |f| %>
+
+<%= f.label :flight%>
+<br>
+<%= f.number_field :flight %>
+<br><br>
+
+<%= f.label :departure_date %>
+<br>
+<%= f.date_field :departure_date %>
+<br><br>
+
+<%= f.label :origin %>
+<br>
+<%= f.text_field :origin %>
+<br><br>
+
+<%= f.label :destination %>
+<br>
+<%= f.text_field :destination %>
+<br><br>
+
+<%= f.label :plane %>
+<br>
+<%= f.number_field :plane_id %>
+<br><br>
+
+<%= f.label :seats %>
+<br>
+<%= f.number_field :seats %>
+<br><br>
+
+<%= f.submit %>
+
+<% end %>
